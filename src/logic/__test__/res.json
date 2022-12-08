@@ -1,0 +1,25 @@
+[
+  [
+    [
+      ["sample 1", "reagent 1"],
+      ["sample 1", "reagent 1"],
+      ["sample 1", "reagent 2"],
+      ["sample 1", "reagent 2"],
+      ["sample 2", "reagent 1"],
+      ["sample 2", "reagent 1"],
+      ["sample 2", "reagent 2"],
+      ["sample 2", "reagent 2"],
+      null,
+      null,
+      null,
+      null
+    ],
+    [null, null, null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null, null, null]
+  ]
+]
