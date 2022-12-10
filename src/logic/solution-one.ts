@@ -23,28 +23,29 @@ const solutionOne: SolutionType = (
     createEmptyPlate(plateDimension)
   );
 
-  const sampleMap: { [key: string]: { replicate: number; reagent: string }[] } =
-    {};
+  const sampleMap: { [sample: string]: { [reagent: string]: number } } = {};
   for (let i = 0; i < replicates.length; i++) {
     const experimentSamples = samples[i];
     const experimentReagents = reagents[i];
     const experimentReplicate = replicates[i];
     for (const sample of experimentSamples) {
       if (sampleMap[sample] === undefined) {
-        sampleMap[sample] = experimentReagents.map((reagent) => ({
-          replicate: experimentReplicate,
-          reagent: reagent,
-        }));
+        sampleMap[sample] = {};
+        experimentReagents.forEach((reagent) => {
+          sampleMap[sample][reagent] = experimentReplicate;
+        });
       } else {
-        sampleMap[sample].concat(
-          experimentReagents.map((reagent) => ({
-            reagent: reagent,
-            replicate: experimentReplicate,
-          }))
-        );
+        experimentReagents.forEach((reagent) => {
+          const isDefined = sampleMap[sample][reagent] !== undefined;
+          sampleMap[sample][reagent] = isDefined
+            ? sampleMap[sample][reagent] + experimentReplicate
+            : experimentReplicate;
+        });
       }
     }
   }
+
+  console.log(sampleMap);
 
   let i = 0;
   let j = 0;
@@ -53,7 +54,8 @@ const solutionOne: SolutionType = (
   const { width, height } = getWidthAndHeight(plateDimension);
 
   Object.keys(sampleMap).forEach((sample) => {
-    sampleMap[sample].forEach(({ replicate, reagent }) => {
+    Object.keys(sampleMap[sample]).forEach((reagent) => {
+      const replicate = sampleMap[sample][reagent];
       let r = 0;
       do {
         if (i === width) {
@@ -66,7 +68,6 @@ const solutionOne: SolutionType = (
           j = 0;
           i = 0;
         }
-        console.log(k, j, i);
 
         plates[k][j][i] = [sample, reagent];
         i++;
