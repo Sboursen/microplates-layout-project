@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import solutionOne from "../solution-one";
+import solutionOne from "../solutionOne";
 
 describe("solutionOne", () => {
   describe.skip("with one simple experiment", () => {
