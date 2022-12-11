@@ -19,7 +19,7 @@ const solutionOne: SolutionType = (
     replicates
   );
 
-  const plates = new Array<PlateType>(minimumNumberOfPlates).fill(
+  const plates = [...new Array<PlateType>(minimumNumberOfPlates)].map(() =>
     createEmptyPlate(plateDimension)
   );
 
@@ -44,8 +44,6 @@ const solutionOne: SolutionType = (
       }
     }
   }
-
-  console.log(sampleMap);
 
   let i = 0;
   let j = 0;
