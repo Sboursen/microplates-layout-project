@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import solutionOne from "../solutionOne";
 
 describe("solutionOne", () => {
-  describe.skip("with one simple experiment", () => {
+  describe("with one simple experiment", () => {
     it("should contain the correct number of plates", () => {
       const PlateDimension = 96;
       const samples = [["sample 1", "sample 2"]];
@@ -170,7 +170,7 @@ describe("solutionOne", () => {
     });
   });
 
-  describe.skip("with two experiments", () => {
+  describe("with two experiments", () => {
     it("should contain the correct number of plates", () => {
       const PlateDimension = 384;
       const samples = [
@@ -665,7 +665,7 @@ describe("solutionOne", () => {
     });
   });
 
-  describe.skip("with a lot of experiments giving multiple rows", () => {
+  describe("with a lot of experiments giving multiple rows", () => {
     it("should contain the correct number of plates", () => {
       const PlateDimension = 96;
       const samples = [
@@ -893,7 +893,7 @@ describe("solutionOne", () => {
       const replicates = [10, 5, 3];
 
       const result = solutionOne(PlateDimension, samples, reagents, replicates);
-      console.log(JSON.stringify(result));
+
       expect(result.flat(2).filter((well) => well === null).length).toBe(
         PlateDimension * 2 - 108
       );

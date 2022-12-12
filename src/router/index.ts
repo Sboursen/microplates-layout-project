@@ -1,15 +1,22 @@
+import OutputView from "../views/OutputView.vue";
+import InputView from "../views/InputView.vue";
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/",
-      name: "home",
-      component: HomeView,
+      name: "input",
+      component: InputView,
+    },
+    {
+      path: "/result",
+      name: "output",
+      component: OutputView,
     },
   ],
+  linkExactActiveClass: "current",
 });
 
 export default router;
