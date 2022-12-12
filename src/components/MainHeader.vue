@@ -78,4 +78,7 @@ const navigation = [
 .current {
   @apply bg-gray-900 text-white;
 }
+.current-inactive {
+  @apply text-gray-300 hover:bg-gray-700 hover:text-white;
+}
 </style>

@@ -1,3 +1,7 @@
-<template>hello</template>
+<template>
+  <ExperimentsTableVue />
+</template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import ExperimentsTableVue from "@/components/ExperimentsTable.vue";
+</script>
